@@ -1,0 +1,76 @@
+version: "3.7"
+
+services:
+    php:
+        build:
+            context: ./docker/php
+        ports:
+            - '9005:9000'
+        volumes:
+            - .:/var/www/html
+        depends_on:
+            - mailhog
+            - db
+        networks:
+            sanatorium_net:
+
+    nginx:
+        image: nginx:alpine
+        ports:
+            - '8094:80'
+        volumes:
+            - .:/var/www/html
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - php
+            - mailhog
+        networks:
+            sanatorium_net:
+
+    db:
+        image: mariadb:latest
+        ports:
+            - '3339:3306'
+        volumes:
+            - ./data/sql:/docker-entrypoint-initdb.d/
+            - sanatorium_net_db:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=sanatorium
+            - MYSQL_USER=sanatorium
+            - MYSQL_PASSWORD=test123
+        networks:
+            sanatorium_net:
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        environment:
+            - PMA_HOST=db
+            - PMA_PORT=sanatorium
+            - PMA_PASSWORD=root
+            - PMA_USER=root
+        ports:
+            - '9046:80'
+        depends_on:
+            - db
+        networks:
+            sanatorium_net:
+
+    redis:
+        image: redis
+        networks:
+            sanatorium_net:
+
+    mailhog:
+        image: mailhog/mailhog
+        ports:
+            - '9048:8025'
+            - '2048:1025'
+        networks:
+            sanatorium_net:
+
+volumes:
+    sanatorium_net_db:
+
+networks:
+    sanatorium_net:
