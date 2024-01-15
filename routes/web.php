@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'user'], function () {
+    Route::get('/login', 'App\Http\Controllers\UserController@login');
+    Route::post('/auth', 'App\Http\Controllers\UserController@auth');
+    Route::get('/logout', 'App\Http\Controllers\UserController@logout');
+});
