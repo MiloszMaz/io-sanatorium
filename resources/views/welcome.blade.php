@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.main')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name') }}</title>
-</head>
-
-<body>
-</body>
-
-</html>
+@section('content')
+    <div class="welcome-page">
+        <h1>Sanatorium Lepsze życie</h1>
+    </div>
+@endsection

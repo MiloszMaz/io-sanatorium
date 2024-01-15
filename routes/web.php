@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'user'], function () {
-    Route::get('/login', 'App\Http\Controllers\UserController@login');
-    Route::post('/auth', 'App\Http\Controllers\UserController@auth');
-    Route::get('/logout', 'App\Http\Controllers\UserController@logout');
+    Route::get('login', 'App\Http\Controllers\UserController@login');
+    Route::post('auth', 'App\Http\Controllers\UserController@auth');
+    Route::get('logout', 'App\Http\Controllers\UserController@logout');
 });
