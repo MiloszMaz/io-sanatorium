@@ -22,3 +22,13 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('/auth', 'App\Http\Controllers\UserController@auth');
     Route::get('/logout', 'App\Http\Controllers\UserController@logout');
 });
+
+Route::group(['prefix' => 'pacjent'], function () {
+    Route::get('/rejestracja', 'App\Http\Controllers\PacjentController@rejestracja');
+    Route::any('/sprawdz-dostepnosc-terminow', 'App\Http\Controllers\PacjentController@sprawdzDostepnoscTerminow');
+    Route::get('/lista-pacjentow', 'App\Http\Controllers\PacjentController@listaPacjentow');
+
+
+    Route::get('/rejestracja-pacjenta', 'App\Http\Controllers\PacjentController@rejestracjaPacjenta');
+    Route::post('/rejestruj-w-systemie', 'App\Http\Controllers\PacjentController@rejestrujWSystemie');
+});
