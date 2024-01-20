@@ -5,7 +5,12 @@ Aplikacja Sanatorium na potrzeby zajęć IO
 Laravel + mysql + phpmyadmin + mailhog + redis
 
 ## Instalacja
-`docker-compose up -d`
+```
+docker-compose up -d
+apt install npm
+npm install
+npm ci && npm run dev
+```
 
 1. Laravel
    http://localhost:8094/

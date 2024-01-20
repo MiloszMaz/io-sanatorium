@@ -43,7 +43,7 @@ body {
 }
 
 .welcome-page {
-    height: 90%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,4 +51,55 @@ body {
 
 .center-box {
     margin: 0 auto;
+    text-align: center;
+}
+
+.form-control, .btn {
+    border-radius: 0;
+}
+
+/* rejestracja */
+.rejestracja-step1 h1, .rejestracja-step2 legend {
+    font-size: 23px;
+}
+.rejestracja-step1 .navbar-nav {
+    margin-top: 2em;
+}
+.rejestracja-step1 a.nav-link {
+    background: #45818e;
+    color: #fff;
+    width: 100%;
+    border: 1px solid #7f9398;
+}
+.rejestracja-step1 a.nav-link:hover {
+    background: #145979;
+}
+.btn-green {
+    background: #93c47d;
+    border: 1px solid #6b8773;
+    width: 100%;
+}
+.btn-green:hover {
+    background: #88f857;
+    border: 1px solid #6b8773;
+}
+.text-success {
+    color: #b6d7a8 !important;
+    margin: 1em 0 2em;
+    font-size: 18px;
+}
+.rejestracja-step3 {
+    margin-top: 1em;
+}
+.rejestracja-step3 legend {
+    margin-bottom: 1em;
+}
+.rejestracja-step3 label.row {
+    border: 1px solid #9e9e9e;
+}
+.rejestracja-step3 .row .col-md-9 {
+    padding-right: 0;
+}
+.rejestracja-step3 .btn-green {
+    max-width: 500px;
 }

@@ -1,7 +1,7 @@
 <nav class="navbar">
     <ul>
         <li>
-            <a href="#">Rejestracja pacjentów</a>
+            <a href="/pacjent/rejestracja">Rejestracja pacjentów</a>
         </li>
         <li>
             <a href="#">Lista pacjentów</a>
