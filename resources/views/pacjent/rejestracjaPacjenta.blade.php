@@ -9,43 +9,43 @@
         <label class="row">
             <label class="col-md-3 col-form-label">Imię pacjenta</label>
             <div class="col-md-9">
-                <input type="text" class="form-control" name="imie_pacjenta">
+                <input type="text" class="form-control" name="imie_pacjenta" required />
             </div>
         </label>
         <label class="row">
             <label class="col-md-3 col-form-label">Nazwisko pacjenta</label>
             <div class="col-md-9">
-                <input type="text" class="form-control" name="nazwisko_pacjenta">
+                <input type="text" class="form-control" name="nazwisko_pacjenta" required />
             </div>
         </label>
         <label class="row">
             <label class="col-md-3 col-form-label">Data urodzenia</label>
             <div class="col-md-9">
-                <input type="text" class="form-control" name="data_urodzenia">
+                <input type="text" class="form-control" name="data_urodzenia" required />
             </div>
         </label>
         <label class="row">
             <label class="col-md-3 col-form-label">Pesel</label>
             <div class="col-md-9">
-                <input type="text" class="form-control" name="pesel">
+                <input type="text" class="form-control" name="pesel" required />
             </div>
         </label>
         <label class="row">
             <label class="col-md-3 col-form-label">Numer skierowania</label>
             <div class="col-md-9">
-                <input type="text" class="form-control" name="numer_skierowania">
+                <input type="text" class="form-control" name="numer_skierowania" required />
             </div>
         </label>
         <label class="row">
             <label class="col-md-3 col-form-label">Ilość dni</label>
             <div class="col-md-9">
-                <input type="text" class="form-control" name="ilosc_dni">
+                <input type="text" class="form-control" name="ilosc_dni" required />
             </div>
         </label>
         <label class="mb-3 row">
             <label class="col-md-3 col-form-label">Przyczyna</label>
             <div class="col-md-9">
-                <input type="text" class="form-control" name="przyczyna">
+                <input type="text" class="form-control" name="przyczyna" required />
             </div>
         </label>
         <div class="text-center">

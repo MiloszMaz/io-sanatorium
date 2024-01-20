@@ -57,6 +57,6 @@ class PacjentController extends Controller
 
         session()->flash('success', sprintf('Pacjent %s został zapisany.', $nazwiskoPacjenta));
 
-        return redirect('/');
+        return redirect('/komunikat');
     }
 }

@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/komunikat', 'App\Http\Controllers\HomeController@komunikat');
 
 Route::group(['prefix' => 'user'], function () {
     Route::get('login', 'App\Http\Controllers\UserController@login');
