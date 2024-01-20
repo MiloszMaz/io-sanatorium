@@ -49,3 +49,6 @@ body {
     align-items: center;
 }
 
+.center-box {
+    margin: 0 auto;
+}
