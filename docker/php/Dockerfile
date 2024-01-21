@@ -9,7 +9,9 @@ RUN apt update \
     libcurl4-openssl-dev \
     libpng-dev \
     libjpeg-dev \
-    libmcrypt-dev
+    libmcrypt-dev \
+    npm
+
 
 # Install php extensions
 RUN docker-php-ext-install pdo_mysql

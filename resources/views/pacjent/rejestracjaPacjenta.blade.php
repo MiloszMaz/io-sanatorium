@@ -42,10 +42,16 @@
                 <input type="text" class="form-control" name="ilosc_dni" required />
             </div>
         </label>
-        <label class="mb-3 row">
+        <label class="mb-3">
             <label class="col-md-3 col-form-label">Przyczyna</label>
             <div class="col-md-9">
                 <input type="text" class="form-control" name="przyczyna" required />
+            </div>
+        </label>
+        <label class="mb-3 row">
+            <label class="col-md-3 col-form-label">Numer telefonu do opiekuna</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" name="numer_do_opiekuna" required />
             </div>
         </label>
         <div class="text-center">
