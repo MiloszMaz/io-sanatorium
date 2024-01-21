@@ -14,17 +14,17 @@ class UserController extends Controller
         return view('user.login');
     }
 
-    public function auth(): RedirectResponse
+    public function auth(Request $request): RedirectResponse
     {
-        $login = Request::get('login');
-        $password = Request::get('password');
+        $login = $request->get('login');
+        $password = $request->get('password');
 
-        if($login && $password && Auth::attempt(['email' => $login, 'password' => $password, 'active' => 1])) {
-            session()->flash('success', 'Zalogowano');
+        if ($login && $password && Auth::attempt(['email' => $login, 'password' => $password, 'active' => 1])) {
+            session()->flash('login-success', 'Zalogowano');
             return redirect('/');
         }
 
-        session()->flash('error', 'Niepoprawne dane logowania');
+        session()->flash('login-error', 'Niepoprawne dane logowania');
 
         return redirect('/user/login');
     }

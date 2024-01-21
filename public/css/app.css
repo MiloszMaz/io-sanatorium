@@ -49,3 +49,11 @@ body {
     align-items: center;
 }
 
+.login-page {
+    width: 33%;
+}
+
+.btn.btn-green {
+    background-color: #83c581;
+}
+

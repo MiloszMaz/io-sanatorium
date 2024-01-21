@@ -4,7 +4,7 @@
             <a href="#">Rejestracja pacjentów</a>
         </li>
         <li>
-            <a href="#">Lista pacjentów</a>
+            <a href="{{ route('pacjenci') }}">Lista pacjentów</a>
         </li>
         <li>
             <a href="#">Fizjoterapia</a>
