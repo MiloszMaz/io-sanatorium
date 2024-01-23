@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Pacjent;
@@ -10,6 +11,11 @@ use Illuminate\View\View;
 
 class PacjentController extends Controller
 {
+    public function index()
+    {
+        return view('pacjenci.lista');
+    }
+
     public function rejestracja(): View
     {
         return view('pacjent.rejestracja');
@@ -25,7 +31,7 @@ class PacjentController extends Controller
         $termin = Request::get('termin');
         $isEmptyDate = null;
 
-        if($termin) {
+        if ($termin) {
             // TODO: sprawdz czy dostepny
             $isEmptyDate = true;
 

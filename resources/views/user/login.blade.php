@@ -1,18 +1,23 @@
 @extends('layouts.main')
 
 @section('content')
-
-    <form action="/user/auth" method="post">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="text" name="login" class="form-control" id="exampleInputEmail1">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <button type="submit" class="btn btn-primary">Zaloguj</button>
-    </form>
-
+    <div class="container mt-5 login-page">
+        <form action="{{ route('auth') }}" method="post">
+            @csrf
+            <div class="mb-3">
+                <label for="login" class="form-label">Login</label>
+                <input type="text" name="login" class="form-control" id="login" name="login">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Hasło</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            @if (session('login-error'))
+            <div class="alert alert-danger">
+                {{ session('login-error') }}
+            </div>
+            @endif
+            <button type="submit" class="btn btn-green">Zaloguj</button>
+        </form>
+    </div>
 @endsection

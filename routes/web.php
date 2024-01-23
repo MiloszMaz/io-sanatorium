@@ -20,20 +20,22 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
 Route::get('/komunikat', 'App\Http\Controllers\HomeController@komunikat');
 
 Route::group(['prefix' => 'user'], function () {
-    Route::get('login', 'App\Http\Controllers\UserController@login');
-    Route::post('auth', 'App\Http\Controllers\UserController@auth');
-    Route::get('logout', 'App\Http\Controllers\UserController@logout');
+    Route::get('login', 'App\Http\Controllers\UserController@login')->name('login');
+    Route::post('auth', 'App\Http\Controllers\UserController@auth')->name('auth');
+    Route::get('logout', 'App\Http\Controllers\UserController@logout')->name('logout');
 });
 
-Route::group(['prefix' => 'pacjent'], function () {
-    Route::get('/rejestracja', 'App\Http\Controllers\PacjentController@rejestracja');
-    Route::any('/sprawdz-dostepnosc-terminow', 'App\Http\Controllers\PacjentController@sprawdzDostepnoscTerminow');
-    Route::get('/lista-pacjentow', 'App\Http\Controllers\PacjentController@listaPacjentow');
-
-
-    Route::get('/rejestracja-pacjenta', 'App\Http\Controllers\PacjentController@rejestracjaPacjenta');
-    Route::post('/rejestruj-w-systemie', 'App\Http\Controllers\PacjentController@rejestrujWSystemie');
+Route::middleware('auth')->group(function () {
+    Route::group(['prefix' => 'pacjent'], function () {
+        Route::get('', 'App\Http\Controllers\PacjentController@index')->name('pacjenci');
+        Route::get('/rejestracja', 'App\Http\Controllers\PacjentController@rejestracja')->name('pacjenci/rejestracja');
+        Route::any('/sprawdz-dostepnosc-terminow', 'App\Http\Controllers\PacjentController@sprawdzDostepnoscTerminow')->name('pacjenci/rejestracja');
+        Route::get('/lista-pacjentow', 'App\Http\Controllers\PacjentController@listaPacjentow');
+        Route::get('/rejestracja-pacjenta', 'App\Http\Controllers\PacjentController@rejestracjaPacjenta');
+        Route::post('/rejestruj-w-systemie', 'App\Http\Controllers\PacjentController@rejestrujWSystemie');
+    });
 });
