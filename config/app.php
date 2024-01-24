@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Warsaw',
 
     /*
     |--------------------------------------------------------------------------
@@ -231,5 +231,5 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-
+    'max_occupancy' => env('MAX_OCCUPANCY', 50)
 ];

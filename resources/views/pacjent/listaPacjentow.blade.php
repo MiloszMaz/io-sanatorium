@@ -26,7 +26,12 @@
                 <tr>
                     <td>{{$pacjent->imie}} {{$pacjent->nazwisko}}</td>
                     <td>{{$pacjent->pesel}}</td>
-                    <td>{{$pacjent->imie}}</td>
+                    @if(!empty($pacjent->pobyt))
+                    <td>{{$pacjent->pobyt->data_przyjecia->format('Y-m-d')}} -
+                        {{$pacjent->pobyt->data_wypisu->format('Y-m-d')}}</td>
+                    @else
+                    <td>Aktualnie brak</td>
+                    @endif
                 </tr>
                 @endforeach
             </table>
