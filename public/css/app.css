@@ -42,6 +42,20 @@ body {
     }
 }
 
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
 .welcome-page {
     height: 90%;
     display: flex;
@@ -52,6 +66,7 @@ body {
 .login-page {
     width: 33%;
 }
+
 
 .btn.btn-green {
     background-color: #83c581;

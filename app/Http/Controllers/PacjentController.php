@@ -4,16 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Models\Pacjent;
 use App\Models\Skierowanie;
-use Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class PacjentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('pacjenci.lista');
+        $pesel = $request->get('pesel');
+
+        if (!empty($pesel)) {
+            $pacjenci = Pacjent::where('pesel', $pesel)->paginate(25);
+        } else {
+            $pacjenci = Pacjent::paginate(25);
+        }
+
+        return view('pacjent.listaPacjentow', ['pacjenci' => $pacjenci]);
     }
 
     public function rejestracja(): View
