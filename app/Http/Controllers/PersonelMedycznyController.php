@@ -19,7 +19,7 @@ class PersonelMedycznyController extends Controller
         return view('personel.listaAkcji');
     }
 
-    public function formularz(PersonelMedyczny $personelMedyczny)
+    public function formularz()
     {
         return view('personel.formularz');
     }
@@ -30,20 +30,20 @@ class PersonelMedycznyController extends Controller
         return redirect(route('personel/formularz'));
     }
 
-    public function edytuj(PersonelMedyczny $personelMedyczny)
+    public function edytuj(PersonelMedyczny $personel)
     {
-        return view('personel.edycja', ['personelMedyczny' => $personelMedyczny]);
+        return view('personel.edycja', ['personel' => $personel]);
     }
 
-    public function zapisz(PersonelMedyczny $personelMedyczny, StworzPersonelMedyczny $request)
+    public function zapisz(PersonelMedyczny $personel, StworzPersonelMedyczny $request)
     {
-        $personelMedyczny->update($request->validated());
-        return redirect(route('personel/formularz'));
+        $personel->update($request->validated());
+        return redirect(route('personel/edycja', ['personel' => $personel->id]));
     }
 
-    public function usun(PersonelMedyczny $personelMedyczny)
+    public function usun(PersonelMedyczny $personel)
     {
-        $personelMedyczny->delete();
+        $personel->delete();
         return redirect(route('personel'));
     }
 }

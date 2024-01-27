@@ -18,8 +18,8 @@
                             <td>{{ $row->numer_kontaktowy }}</td>
                             <td>{{ $row->stanowisko }}</td>
                             <td>
-                                <a href="#">Edytuj</a>
-                                <a href="#">Usuń</a>
+                                <a href="{{ route('personel/edycja', ['personel' => $row->id]) }}">Edytuj</a>
+                                <a href="{{ route('personel/usun', ['personel' => $row->id]) }}">Usuń</a>
                             </td>
                         </tr>
                     @endforeach
