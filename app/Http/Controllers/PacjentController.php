@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EdytujPacjenta;
 use App\Models\Pacjent;
 use App\Models\RezerwacjaTerminu;
 use App\Models\Skierowanie;
@@ -109,5 +110,22 @@ class PacjentController extends Controller
         session()->flash('success', sprintf('Pacjent %s został zapisany.', $nazwiskoPacjenta));
 
         return redirect(route('pacjenci/rejestracja-pacjenta'));
+    }
+
+    public function edytuj(Pacjent $pacjent)
+    {
+        return view('pacjent.edycja', ['pacjent' => $pacjent]);
+    }
+
+    public function zapisz(Pacjent $pacjent, EdytujPacjenta $request)
+    {
+        $pacjent->update($request->validated());
+        return redirect(route('pacjenci/edycja', ['pacjent' => $pacjent->id]));
+    }
+
+    public function usun(Pacjent $pacjent)
+    {
+        $pacjent->delete();
+        return redirect(route('pacjenci'));
     }
 }

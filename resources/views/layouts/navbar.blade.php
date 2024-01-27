@@ -1,13 +1,13 @@
 <nav class="navbar">
     <ul>
         <li>
-            <a href="/pacjent/rejestracja">Rejestracja pacjentów</a>
+            <a href="{{ route('pacjenci/rejestracja') }}">Rejestracja pacjentów</a>
         </li>
         <li>
             <a href="{{ route('pacjenci') }}">Lista pacjentów</a>
         </li>
         <li>
-            <a href="#">Fizjoterapia</a>
+            <a href="{{ route('personel/listaAkcji') }}">Personel medyczny</a>
         </li>
         <li>
             <a href="#">Lista sal</a>

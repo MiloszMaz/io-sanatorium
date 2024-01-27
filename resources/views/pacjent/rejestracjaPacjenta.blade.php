@@ -25,7 +25,7 @@
                 </div>
             </label>
             <label class="row">
-                <label class="col-md-3 col-form-label">Data urodzenia</label>
+                <label class="col-md-3 col-form-label">Data przyjęcia</label>
                 <div class="col-md-9">
                     <input type="date" class="form-control" name="data_przyjecia" required />
                 </div>
